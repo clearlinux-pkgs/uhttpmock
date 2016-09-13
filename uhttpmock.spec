@@ -4,7 +4,7 @@
 #
 Name     : uhttpmock
 Version  : 0.5.0
-Release  : 1
+Release  : 2
 URL      : https://github.com/pwithnall/uhttpmock/archive/0.5.0.tar.gz
 Source0  : https://github.com/pwithnall/uhttpmock/archive/0.5.0.tar.gz
 Summary  : HTTP web service mocking library
