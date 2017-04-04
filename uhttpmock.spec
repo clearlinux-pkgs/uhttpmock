@@ -4,7 +4,7 @@
 #
 Name     : uhttpmock
 Version  : 0.5.0
-Release  : 2
+Release  : 3
 URL      : https://github.com/pwithnall/uhttpmock/archive/0.5.0.tar.gz
 Source0  : https://github.com/pwithnall/uhttpmock/archive/0.5.0.tar.gz
 Summary  : HTTP web service mocking library
@@ -59,6 +59,7 @@ lib components for the uhttpmock package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1491327271
 %autogen --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -70,6 +71,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
+export SOURCE_DATE_EPOCH=1491327271
 rm -rf %{buildroot}
 %make_install
 
@@ -78,7 +80,8 @@ rm -rf %{buildroot}
 
 %files data
 %defattr(-,root,root,-)
-/usr/share/gir-1.0/Uhm-0.0.gir
+/usr/lib64/girepository-1.0/Uhm-0.0.typelib
+/usr/share/gir-1.0/*.gir
 
 %files dev
 %defattr(-,root,root,-)
@@ -86,10 +89,10 @@ rm -rf %{buildroot}
 /usr/include/libuhttpmock-0.0/uhttpmock/uhm-server.h
 /usr/include/libuhttpmock-0.0/uhttpmock/uhm-version.h
 /usr/include/libuhttpmock-0.0/uhttpmock/uhm.h
-/usr/lib64/*.so
-/usr/lib64/girepository-1.0/Uhm-0.0.typelib
-/usr/lib64/pkgconfig/*.pc
+/usr/lib64/libuhttpmock-0.0.so
+/usr/lib64/pkgconfig/libuhttpmock-0.0.pc
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/*.so.*
+/usr/lib64/libuhttpmock-0.0.so.0
+/usr/lib64/libuhttpmock-0.0.so.0.2.0
