@@ -4,7 +4,7 @@
 #
 Name     : uhttpmock
 Version  : cda4b6330c6543c48600dd015af44bd0c2a21b4d
-Release  : 9
+Release  : 10
 URL      : https://gitlab.com/uhttpmock/uhttpmock/-/archive/cda4b6330c6543c48600dd015af44bd0c2a21b4d/uhttpmock-0.5.1.tar.bz2
 Source0  : https://gitlab.com/uhttpmock/uhttpmock/-/archive/cda4b6330c6543c48600dd015af44bd0c2a21b4d/uhttpmock-0.5.1.tar.bz2
 Summary  : HTTP web service mocking library
