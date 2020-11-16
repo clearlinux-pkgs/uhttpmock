@@ -4,7 +4,7 @@
 #
 Name     : uhttpmock
 Version  : cda4b6330c6543c48600dd015af44bd0c2a21b4d
-Release  : 10
+Release  : 11
 URL      : https://gitlab.com/uhttpmock/uhttpmock/-/archive/cda4b6330c6543c48600dd015af44bd0c2a21b4d/uhttpmock-0.5.1.tar.bz2
 Source0  : https://gitlab.com/uhttpmock/uhttpmock/-/archive/cda4b6330c6543c48600dd015af44bd0c2a21b4d/uhttpmock-0.5.1.tar.bz2
 Summary  : HTTP web service mocking library
@@ -69,20 +69,21 @@ license components for the uhttpmock package.
 
 %prep
 %setup -q -n uhttpmock-cda4b6330c6543c48600dd015af44bd0c2a21b4d
+cd %{_builddir}/uhttpmock-cda4b6330c6543c48600dd015af44bd0c2a21b4d
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568258047
+export SOURCE_DATE_EPOCH=1605558315
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %autogen --disable-static
 make  %{?_smp_mflags}
@@ -92,13 +93,13 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check || :
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1568258047
+export SOURCE_DATE_EPOCH=1605558315
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/uhttpmock
-cp COPYING %{buildroot}/usr/share/package-licenses/uhttpmock/COPYING
+cp %{_builddir}/uhttpmock-cda4b6330c6543c48600dd015af44bd0c2a21b4d/COPYING %{buildroot}/usr/share/package-licenses/uhttpmock/caeb68c46fa36651acf592771d09de7937926bb3
 %make_install
 
 %files
@@ -125,4 +126,4 @@ cp COPYING %{buildroot}/usr/share/package-licenses/uhttpmock/COPYING
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/uhttpmock/COPYING
+/usr/share/package-licenses/uhttpmock/caeb68c46fa36651acf592771d09de7937926bb3
