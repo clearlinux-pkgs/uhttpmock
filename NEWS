@@ -1,13 +1,19 @@
-Overview of changes from uhttpmock 0.5.1 to uhttpmock 0.6.0
+Overview of changes from uhttpmock 0.5.2 to uhttpmock 0.5.3
 ===========================================================
 
-Major changes:
+Bugs fixed:
+ • Add an integration tutorial (by Rasmus Thomsen) (#3)
+ • Only specify SOUP_SERVER_LISTEN_HTTPS if TLS is enabled (!9)
+ • Expand TLS certificate instructions (!10)
 
-API changes:
+
+Overview of changes from uhttpmock 0.5.1 to uhttpmock 0.5.2
+===========================================================
 
 Bugs fixed:
-
-Updated translations:
+ • Add GitLab CI
+ • Fix autoconf-archive usage due to them breaking API
+ • Bump GObject dependency to 2.38 to use newer private data API
 
 
 Overview of changes from uhttpmock 0.5.0 to uhttpmock 0.5.1

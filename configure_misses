@@ -1,3 +1,4 @@
-Configure miss: whether to enable debugging
-Configure miss: whether C++ compiler accepts -Werror=unknown-warning-option
+Configure miss: g++ option to enable C++11 features
 Configure miss: vapigen
+Configure miss: whether C++ compiler accepts -Werror=unknown-warning-option
+Configure miss: whether to enable debugging
